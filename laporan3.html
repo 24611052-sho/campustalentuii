@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - Shofi Salsabila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="poster" id="poster">
+      <header>
+        <div class="logo">24611052</div>
+        <nav>
+          <a href="#" id="nav-home">BERANDA</a>
+          <a href="#about-trigger" id="nav-about">TENTANG</a>
+          <a href="#contact-trigger" id="nav-contact">KONTAK</a>
+        </nav>
+      </header>
+      <div class="top-left micro">SHOFI SALSABILA</div>
+      <p class="tiny left-top"><span id="realtime-time">--:--:--</span><br /><span id="realtime-date">--</span></p>
+      <div class="tiny right-top small-phrase"><span>HALO!</span><span>SAYA</span><span>SHOFI.</span></div>
+      <p class="tiny right-bottom">LET'S MAKE GREAT THINGS HAPPEN.</p>
+      <h1 class="welcomebg">WELCOME</h1>
+      <div class="frame"><img src="8.png" alt="poster image" /></div>
+      <p class="tagline">“ UNLOCKING POTENTIAL ”</p>
+      <a class="edition" href="#about-trigger">EDITION: CAMPUS TALENT APPLICATION </a>
+    </section>
+
+    <section id="about-trigger" class="scroll-trigger"></section>
+    <section id="contact-trigger" class="scroll-trigger"></section>
+
+    <div class="about-fixed" aria-label="Tentang" role="region">
+      <div class="about-hero">
+        <h1 class="hero-title">SHOFI<br /><span class="hero-title-2">SALSABILA</span></h1>
+        
+        <div class="bio-card left">
+          <h3 class="bio-label">THE PROBABILITY</h3>
+          <p class="bio-desc">Statistika FMIPA '24. Bertahan di antara kalkulus dan sebaran peluang. Survival rate fluktuatif, tapi setidaknya data saya tidak pernah bohong (kecuali outlier dikit).</p>
+          <div class="bio-footer"><span>CONFIDENCE INTERVAL: 95%</span></div>
+        </div>
+    
+        </div>
+        <div class="bio-card right">
+          <h3 class="bio-label">THE ANOMALY</h3>
+          <p class="bio-desc">Hadir untuk membuktikan anak Statistika punya sisi lain untuk diobservasi. Goal saya? Menjadi konstanta yang menjaga segalanya tetap seimbang di tengah variasi baru.</p>
+          <div class="bio-footer"><span>SAMPLE SIZE: 1 (ME)</span></div>
+        </div>
+        <div class="person-wrap"><img src="1.png" alt="Portrait" class="person-img" />
+        <div class="hand-trigger">
+        <button class="play-btn" onclick="openVideo()">
+            <span class="play-icon">▶</span>
+        </button>
+        <p class="play-hint">PRESS IT</p>
+    </div>
+</div>
+
+<div id="videoOverlay" class="video-overlay" onclick="closeVideo()">
+    <div class="video-container" onclick="event.stopPropagation()">
+        <video id="myVideo" width="100%" height="100%" controls>
+            <source src="porto.mp4" type="video/mp4">
+            Browser kamu tidak mendukung video.
+        </video>
+        <button class="close-video" onclick="closeVideo()">×</button>
+    </div>
+</div>
+</div></div>
+      </div>
+    </div>
+
+    <div class="contact-fixed" aria-label="Kontak & Galeri" role="region">
+      <div class="contact-overlay-bg"></div>
+
+      <div class="contact-content-wrapper">
+        <button class="gallery-nav prev" aria-label="Sebelumnya">&#10094;</button>
+
+        <div class="gallery-layout">
+          <div class="gallery-display-area">
+            <div class="spotlight-container" id="spotlight">
+              <div class="spotlight-beam"></div>
+              <div id="dust-container"></div>
+            </div>
+            <img id="gallery-image" src="4.png" alt="Lukisan Monet" />
+          </div>
+
+          <div class="gallery-info-area">
+            <div class="info-fade-wrapper" id="info-wrapper">
+              <h2 class="paint-title" id="paint-title">THE CENTRAL TENDENCY</h2>
+              <p class="paint-meta" id="paint-meta">2026 | By Camera | Somewhere in the city</p>
+              <div class="paint-divider"></div>
+              <p class="paint-desc" id="paint-desc">Representasi visual yang menunjukkan keseimbangan data. Fokus pada ketenangan dan kepercayaan diri seorang Statistisi.</p>
+              <div class="mini-contact-section">
+                <h4 class="contact-header">INQUIRIES</h4>
+                <p class="contact-details">
+                  <a href="https://instagram.com/shofsalsabilaaa" target="_blank" style="color: inherit; text-decoration: none;">Instagram: @shofsalsabilaaa</a><br />
+        <a href="mailto:24611052@students.uii.ac.id" style="color: inherit; text-decoration: none;">Email</a> | 
+        <a href="https://wa.me/6285161420246" target="_blank" style="color: inherit; text-decoration: none;">WhatsApp</a>
+                </p>
+                <p class="contact-hours">Connect the points.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="gallery-nav next" aria-label="Lukisan Berikutnya">&#10095;</button>
+        <div class="gallery-footer-credit">
+          <p>© 2026 SHOFI SALSABILA. CURATED FOR EDUCATIONAL PURPOSE.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="floating-nav-container">
+      <button id="page-up" class="nav-btn" aria-label="Scroll Up">&#9650;</button>
+      <div class="nav-line"></div>
+      <button id="page-down" class="nav-btn" aria-label="Scroll Down">&#9660;</button>
+    </div>
+
+    <script>
+      (function () {
+        // --- 1. Realtime Clock ---
+        const timeEl = document.getElementById("realtime-time");
+        const dateEl = document.getElementById("realtime-date");
+        if (timeEl && dateEl) {
+          timeEl.style.fontVariantNumeric = "tabular-nums";
+          function updateDateTime() {
+            const now = new Date();
+            timeEl.textContent = now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+            dateEl.textContent = now.toLocaleDateString("id-ID", { weekday: "long", day: "2-digit", month: "long", year: "numeric" });
+          }
+          updateDateTime();
+          setInterval(updateDateTime, 1000);
+        }
+
+        // --- 2. Parallax Logic ---
+        const aboutLayer = document.querySelector(".about-fixed");
+        const contactLayer = document.querySelector(".contact-fixed");
+        const person = document.querySelector(".person-img");
+        const handBtn = document.querySelector(".hand-trigger");
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const HIDE_PCT = 102;
+
+        function clamp(v, a, b) {
+          return Math.max(a, Math.min(b, v));
+        }
+
+        function updateScroll() {
+          const scrollY = window.scrollY || window.pageYOffset;
+          const h = window.innerHeight || document.documentElement.clientHeight;
+          const aboutProgress = clamp(scrollY / h, 0, 1);
+          const contactProgress = clamp((scrollY - h) / h, 0, 1);
+
+          if (!prefersReduced) {
+            if (aboutLayer) aboutLayer.style.transform = `translate3d(0, ${(1 - aboutProgress) * HIDE_PCT}%, 0)`;
+            if (person) person.style.transform = `translate3d(0, ${scrollY * -0.05}px, 0)`;
+            if (handBtn) handBtn.style.transform = `translate3d(-50%, calc(-50% + ${scrollY * -0.05}px), 0)`;
+            if (contactLayer) contactLayer.style.transform = `translate3d(0, ${(1 - contactProgress) * HIDE_PCT}%, 0)`;
+          } else {
+            if (aboutLayer) aboutLayer.style.transform = aboutProgress >= 0.5 ? "translate3d(0,0,0)" : `translate3d(0, ${HIDE_PCT}%, 0)`;
+            if (contactLayer) contactLayer.style.transform = contactProgress >= 0.5 ? "translate3d(0,0,0)" : `translate3d(0, ${HIDE_PCT}%, 0)`;
+          }
+        }
+        let ticking = false;
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!ticking) {
+              window.requestAnimationFrame(function () {
+                updateScroll();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          },
+          { passive: true },
+        );
+        window.addEventListener("resize", updateScroll);
+        updateScroll();
+
+        // --- 3. Navigation Links (Menu Atas) ---
+        function smoothScrollTo(targetY) {
+          window.scrollTo({ top: targetY, behavior: "smooth" });
+        }
+        document.getElementById("nav-home")?.addEventListener("click", (e) => {
+          e.preventDefault();
+          smoothScrollTo(0);
+        });
+        document.getElementById("nav-about")?.addEventListener("click", (e) => {
+          e.preventDefault();
+          smoothScrollTo(window.innerHeight);
+        });
+        document.getElementById("nav-contact")?.addEventListener("click", (e) => {
+          e.preventDefault();
+          smoothScrollTo(window.innerHeight * 2);
+        });
+
+        // --- 4. GALLERY LOGIC & DUST ---
+        const galleryData = [
+          {
+            src: "4.png",
+            title: "THE CENTRAL TENDENCY",
+            meta: "2026 | By Camera | Somewhere in the city",
+            desc: "Representasi visual yang menunjukkan keseimbangan data. Fokus pada ketenangan dan kepercayaan diri seorang Statistisi.",
+          },
+          {
+            src: "5.png",
+            title: "The Deviation",
+            meta: "2023 | By Camera | Personal Space",
+            desc: "Menjelajahi variasi dari observasi biasa. Momen spontan yang menunjukkan karakter unik dan sisi dinamis.",
+          },
+          {
+            src: "6.png",
+            title: "THE SIGNIFICANCE",
+            meta: "2024 | By Phone | Lobby",
+            desc: "Potret dengan tingkat signifikansi tinggi. Penegasan bahwa setiap elemen visual memiliki makna yang mendalam.",
+          },
+        ];
+
+        let currentGalleryIndex = 0;
+        const galleryImage = document.getElementById("gallery-image");
+        const spotlight = document.getElementById("spotlight");
+        const paintTitle = document.getElementById("paint-title");
+        const paintMeta = document.getElementById("paint-meta");
+        const paintDesc = document.getElementById("paint-desc");
+        const infoWrapper = document.getElementById("info-wrapper");
+        const prevBtn = document.querySelector(".gallery-nav.prev");
+        const nextBtn = document.querySelector(".gallery-nav.next");
+
+        function createDust() {
+          const dustContainer = document.getElementById("dust-container");
+          const particleCount = 25;
+          for (let i = 0; i < particleCount; i++) {
+            const dot = document.createElement("div");
+            dot.classList.add("dust-particle");
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const duration = 5 + Math.random() * 10;
+            const delay = Math.random() * 5;
+            dot.style.left = x + "%";
+            dot.style.top = y + "%";
+            dot.style.animationDuration = duration + "s";
+            dot.style.animationDelay = delay + "s";
+            dustContainer.appendChild(dot);
+          }
+        }
+        createDust();
+
+        function updateGallery(index) {
+          spotlight.style.opacity = "0";
+          galleryImage.style.opacity = "0";
+          infoWrapper.style.opacity = "0";
+          infoWrapper.style.transform = "translateY(10px)";
+          setTimeout(() => {
+            const data = galleryData[index];
+            galleryImage.src = data.src;
+            galleryImage.alt = data.title;
+            paintTitle.textContent = data.title;
+            paintMeta.textContent = data.meta;
+            paintDesc.textContent = data.desc;
+            setTimeout(() => {
+              galleryImage.style.opacity = "1";
+              infoWrapper.style.opacity = "1";
+              infoWrapper.style.transform = "translateY(0)";
+              setTimeout(() => {
+                spotlight.style.opacity = "1";
+              }, 300);
+            }, 100);
+          }, 400);
+        }
+
+        if (prevBtn && nextBtn) {
+          prevBtn.addEventListener("click", () => {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryData.length) % galleryData.length;
+            updateGallery(currentGalleryIndex);
+          });
+          nextBtn.addEventListener("click", () => {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryData.length;
+            updateGallery(currentGalleryIndex);
+          });
+        }
+        setTimeout(() => {
+          spotlight.style.opacity = "1";
+        }, 500);
+
+        // --- 5. PAGE NAVIGATION LOGIC (BOTTOM RIGHT) ---
+        const btnUp = document.getElementById("page-up");
+        const btnDown = document.getElementById("page-down");
+
+        function getCurrentSectionIndex() {
+          const scrollY = window.scrollY;
+          const h = window.innerHeight;
+          return Math.round(scrollY / h);
+        }
+
+        function scrollToSection(index) {
+          const h = window.innerHeight;
+          const targetIndex = Math.max(0, Math.min(index, 2));
+          window.scrollTo({ top: targetIndex * h, behavior: "smooth" });
+        }
+
+        if (btnUp && btnDown) {
+          btnUp.addEventListener("click", () => {
+            scrollToSection(getCurrentSectionIndex() - 1);
+          });
+          btnDown.addEventListener("click", () => {
+            scrollToSection(getCurrentSectionIndex() + 1);
+          });
+
+          window.addEventListener("scroll", () => {
+            const current = getCurrentSectionIndex();
+            if (window.scrollY < 100) btnUp.style.opacity = "0.3";
+            else btnUp.style.opacity = "1";
+            if (current >= 2) btnDown.style.opacity = "0.3";
+            else btnDown.style.opacity = "1";
+          });
+        }
+      })();
+
+       function openVideo() {
+  const overlay = document.getElementById("videoOverlay");
+  const video = document.getElementById("myVideo");
+  
+  overlay.style.display = "flex";
+  if (video) {
+    video.play(); // Otomatis putar pas dibuka
+  }
+}
+
+function closeVideo() {
+  const overlay = document.getElementById("videoOverlay");
+  const video = document.getElementById("myVideo");
+  
+  overlay.style.display = "none";
+  if (video) {
+    video.pause();      // MATIKAN SUARA/VIDEO
+    video.currentTime = 0; // RESET ke awal
+  }
+}
+    </script>
+  </body>
+</html>
