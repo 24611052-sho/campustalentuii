@@ -335,5 +335,23 @@ function closeVideo() {
   }
 }
     </script>
+    <div id="mobile-warning" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #4c0000; z-index: 10000; color: #d4af37; padding: 30px; text-align: center; justify-content: center; align-items: center; flex-direction: column;">
+        <h2 style="font-family: 'Oswald', sans-serif; font-size: 20px; border-bottom: 1px solid #d4af37; padding-bottom: 10px;">OPTIMALISASI LAYAR</h2>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; margin-top: 20px; color: #eeddd0;">
+            "Demi menjaga presisi visual dan detail animasi, portofolio ini dirancang untuk tampilan layar besar."
+        </p>
+        <p style="font-size: 13px; margin-top: 20px; opacity: 0.8;">Mohon gunakan perangkat laptop untuk pengalaman terbaik.</p>
+        <div style="margin-top: 30px; font-size: 11px; opacity: 0.5;">TERIMA KASIH <3</div>
+    </div>
+
+    <script>
+        // Tambahkan ini biar peringatannya muncul cuma di layar kecil (HP)
+        if (window.innerWidth <= 768) {
+            document.getElementById('mobile-warning').style.display = 'flex';
+        }
+    </script>
+
+  </body>
+</html>
   </body>
 </html>
